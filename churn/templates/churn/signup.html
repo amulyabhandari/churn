@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="file:///C:/Users/Acer/Desktop/fontawesome-free-5.15.4-web/css/all.css">
+    <title>Sign-Up Page</title>
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+        <h1>Sign Up</h1>
+    </div>
+    <div class="main">
+        <form method="post" action="{% url 'signup' %}" >
+            {% csrf_token %}
+            <span>
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username" name="">
+            </span><br>
+            <span>
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Email" name="">
+            </span><br>
+            <span>
+                <i class="fa fa-city"></i>
+                <input type="text" placeholder="Branch" name="">
+            </span><br><span>
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="Password" name="">
+            </span><br>
+
+               <input type="submit" value="sign up">
+                <br>
+                <a href="{% url 'login' %}">Already Registered?</a>
+                
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
